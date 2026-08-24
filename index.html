@@ -4,103 +4,156 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Espaço Mary Hair | Realçando sua beleza!</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #b76e79; /* Rose Gold / Pink */
-            --dark: #222222;
-            --light: #fdfbfb;
-            --accent: #f8e5e8;
+            --primary: #c98ca3; /* Rose Gold mais sofisticado */
+            --primary-dark: #a2657b;
+            --dark: #2a2a2a;
+            --light: #fff9fa;
+            --accent: #f4d6df;
+            --gold: #d4af37;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
         body { background-color: var(--light); color: var(--dark); line-height: 1.6; }
         
+        /* Top Banner Elegante */
         header {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80') center/cover;
-            color: white; text-align: center; padding: 100px 20px;
+            background: linear-gradient(135deg, rgba(42,42,42,0.85), rgba(162,101,123,0.85)), url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80') center/cover;
+            color: white; text-align: center; padding: 80px 20px 60px 20px;
+            border-bottom: 5px solid var(--gold);
         }
-        header h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 10px; color: #fce4ec; }
-        header p { font-size: 1.2rem; margin-bottom: 30px; letter-spacing: 2px; text-transform: uppercase; }
+        
+        .badge {
+            background-color: rgba(212, 175, 55, 0.2);
+            color: #ffd700;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            display: inline-block;
+            margin-bottom: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+        }
+
+        header h1 { font-family: 'Playfair Display', serif; font-size: 3.2rem; margin-bottom: 5px; color: #fff; letter-spacing: 1px; }
+        header .subtitle { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.3rem; margin-bottom: 25px; color: var(--accent); }
+        header p { font-size: 1.05rem; margin-bottom: 30px; letter-spacing: 1px; text-transform: uppercase; opacity: 0.9; }
         
         .btn-whatsapp {
-            display: inline-block; background-color: #25d366; color: white; padding: 15px 30px;
+            display: inline-flex; align-items: center; gap: 10px;
+            background-color: #25d366; color: white; padding: 16px 35px;
             border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.1rem;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); transition: 0.3s;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); transition: 0.3s;
         }
-        .btn-whatsapp:hover { background-color: #20ba5a; transform: translateY(-2px); }
+        .btn-whatsapp:hover { background-color: #20ba5a; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6); }
 
         .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
-        .section-title { text-align: center; font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 40px; color: var(--primary); }
         
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 { font-family: 'Playfair Display', serif; font-size: 2.6rem; color: var(--primary-dark); margin-bottom: 10px; }
+        .section-header .divider { width: 60px; height: 3px; background-color: var(--gold); margin: 0 auto; }
+        
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        
         .service-card {
-            background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            background: white; padding: 35px 30px; border-radius: 16px; 
+            box-shadow: 0 10px 30px rgba(162, 101, 123, 0.08);
             border-top: 4px solid var(--primary); transition: 0.3s;
+            position: relative; overflow: hidden;
         }
-        .service-card:hover { transform: translateY(-5px); }
-        .service-card h3 { font-size: 1.3rem; margin-bottom: 10px; color: var(--dark); }
-        .service-card p { color: #666; font-size: 0.95rem; margin-bottom: 20px; }
+        .service-card:hover { transform: translateY(-7px); box-shadow: 0 15px 35px rgba(162, 101, 123, 0.15); }
         
-        .card-link { color: var(--primary); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 5px; }
-        .card-link:hover { text-decoration: underline; }
+        .service-card h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 12px; color: var(--dark); }
+        .service-card p { color: #666; font-size: 0.95rem; margin-bottom: 25px; line-height: 1.7; }
+        
+        .card-link { 
+            color: var(--primary-dark); font-weight: 600; text-decoration: none; 
+            display: inline-flex; align-items: center; gap: 8px; font-size: 0.95rem;
+            transition: 0.2s;
+        }
+        .card-link:hover { color: var(--gold); gap: 12px; }
 
-        footer { background: var(--dark); color: white; text-align: center; padding: 30px 20px; margin-top: 40px; }
-        footer p { font-size: 0.9rem; color: #aaa; }
+        .info-section {
+            background: linear-gradient(to right, #f8e5e8, #fff);
+            border-left: 5px solid var(--primary);
+            padding: 30px; border-radius: 8px; margin-top: 50px; text-align: center;
+        }
+        .info-section h3 { font-family: 'Playfair Display', serif; color: var(--primary-dark); font-size: 1.5rem; margin-bottom: 10px; }
+        .info-section p { color: #555; font-size: 1.05rem; }
+
+        footer { background: var(--dark); color: white; text-align: center; padding: 40px 20px; margin-top: 60px; border-top: 3px solid var(--gold); }
+        footer p { font-size: 0.95rem; color: #ccc; }
+        footer span { color: var(--accent); font-weight: 500; }
     </style>
 </head>
 <body>
 
     <header>
+        <div class="badge">Realçando sua beleza!</div>
         <h1>Espaço Mary Hair</h1>
-        <p>Realçando sua beleza!</p>
-        <a href="https://wa.me/551159781467?text=Olá!%20Gostaria%20de%20agendar%20um%20horário%20no%20Espaço%20Mary%20Hair." class="btn-whatsapp" target="_blank">📅 Agendar Horário via WhatsApp</a>
+        <div class="subtitle">Bem-vinda ao seu momento de beleza</div>
+        <p>Especializada em transformar o seu visual com sofisticação e carinho</p>
+        <a href="https://wa.me/551159781467?text=Olá!%20Gostaria%20de%20agendar%20um%20horário%20no%20Espaço%20Mary%20Hair." class="btn-whatsapp" target="_blank">
+            <span>💬</span> Agendar Horário via WhatsApp
+        </a>
     </header>
 
     <div class="container">
-        <h2 class="section-title">Nossos Serviços</h2>
+        <div class="section-header">
+            <h2>Nossos Serviços</h2>
+            <div class="divider"></div>
+        </div>
+
         <div class="services-grid">
             
             <div class="service-card">
                 <h3>✂️ Cabelos</h3>
-                <p>Cortes modernos e visagismo personalizado para realçar o melhor do seu estilo.</p>
-                <a href="https://wa.me/551159781467?text=Olá!%20Gostaria%20de%20agendar%20um%20horário%20para%20Cabelos." class="card-link" target="_blank">Agendar este &rarr;</a>
+                <p>Cortes modernos, estruturados e visagismo personalizado para realçar o melhor do seu estilo e personalidade.</p>
+                <a href="https://wa.me/551159781467?text=Olá!%20Gostaria%20de%20agendar%20um%20horário%20para%20Cabelos." class="card-link" target="_blank">Agendar este serviço &rarr;</a>
             </div>
 
             <div class="service-card">
                 <h3>💆‍♀️ Escovas</h3>
-                <p>Escovas simples, modeladas e finalizações impecáveis para qualquer ocasião.</p>
-                <a href="https://wa.me/551159781467?text=Olá!%20Gostaria%20de%20agendar%20um%20horário%20para%20Escovas." class="card-link" target="_blank">Agendar este &rarr;</a>
+                <p>Escovas simples, modeladas e finalizações impecáveis com alto brilho e durabilidade para qualquer ocasião.</p>
+                <a href="https://wa.me/551159781467?text=Olá!%20Gostaria%20de%20agendar%20um%20horário%20para%20Escovas." class="card-link" target="_blank">Agendar este serviço &rarr;</a>
             </div>
 
             <div class="service-card">
                 <h3>✨ Tratamentos</h3>
-                <p>Cronograma completo com hidratação, nutrição e reconstrução profunda dos fios.</p>
-                <a href="https://wa.me/551159781467?text=Olá!%20Gostaria%20de%20agendar%20um%20horário%20para%20Tratamentos." class="card-link" target="_blank">Agendar este &rarr;</a>
+                <p>Cronograma capilar completo com hidratação profunda, nutrição e reconstrução para fios saudáveis e sedosos.</p>
+                <a href="https://wa.me/551159781467?text=Olá!%20Gostaria%20de%20agendar%20um%20horário%20para%20Tratamentos." class="card-link" target="_blank">Agendar este serviço &rarr;</a>
             </div>
 
             <div class="service-card">
                 <h3>🎨 Colorimetria</h3>
-                <p>Mechas, luzes, tintura e técnicas avançadas de balayage com segurança e qualidade.</p>
-                <a href="https://wa.me/551159781467?text=Olá!%20Gostaria%20de%20agendar%20um%20horário%20para%20Colorimetria." class="card-link" target="_blank">Agendar este &rarr;</a>
+                <p>Técnicas avançadas de mechas, luzes, tintura e balayage com segurança, proteção dos fios e cores deslumbrantes.</p>
+                <a href="https://wa.me/551159781467?text=Olá!%20Gostaria%20de%20agendar%20um%20horário%20para%20Colorimetria." class="card-link" target="_blank">Agendar este serviço &rarr;</a>
             </div>
 
             <div class="service-card">
                 <h3>💅 Manicure & Pedicure</h3>
-                <p>Cuidados essenciais para unhas perfeitas, cutilagem impecável e esmaltação duradoura.</p>
-                <a href="https://wa.me/551159781467?text=Olá!%20Gostaria%20de%20agendar%20um%20horário%20para%20Manicure%20e%20Pedicure." class="card-link" target="_blank">Agendar este &rarr;</a>
+                <p>Cuidados essenciais para unhas perfeitas, cutilagem impecável, esterilização rigorosa e esmaltação duradoura.</p>
+                <a href="https://wa.me/551159781467?text=Olá!%20Gostaria%20de%20agendar%20um%20horário%20para%20Manicure%20e%20Pedicure." class="card-link" target="_blank">Agendar este serviço &rarr;</a>
             </div>
 
             <div class="service-card">
                 <h3>🌿 Spa para Pés</h3>
-                <p>Esfoliação relaxante e hidratação profunda para renovar e cuidar dos seus pés.</p>
-                <a href="https://wa.me/551159781467?text=Olá!%20Gostaria%20de%20agendar%20um%20horário%20para%20Spa%20para%20Pés." class="card-link" target="_blank">Agendar este &rarr;</a>
+                <p>Momento relaxante de esfoliação profunda e hidratação revigorante para renovar e cuidar com carinho dos seus pés.</p>
+                <a href="https://wa.me/551159781467?text=Olá!%20Gostaria%20de%20agendar%20um%20horário%20para%20Spa%20para%20Pés." class="card-link" target="_blank">Agendar este serviço &rarr;</a>
             </div>
 
+        </div>
+
+        <div class="info-section">
+            <h3>Atendimento com Hora Marcada</h3>
+            <p>Entre em contato pelo WhatsApp <strong>(11) 5978-1467</strong> para verificar os horários disponíveis e garantir o seu atendimento exclusivo.</p>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Espaço Mary Hair. Todos os direitos reservados. Contato: (11) 5978-1467</p>
+        <p>&copy; 2026 <span>Espaço Mary Hair</span>. Todos os direitos reservados. | Agendamentos: (11) 5978-1467</p>
     </footer>
 
 </body>
