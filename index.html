@@ -92,25 +92,42 @@
         .section-header h2 { font-family: 'Playfair Display', serif; font-size: 2.4rem; color: var(--primary-dark); margin-bottom: 10px; }
         .section-header .divider { width: 50px; height: 3px; background-color: var(--gold); margin: 0 auto; }
         
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 25px; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 30px; }
         
         .service-card {
-            background: white; padding: 30px 25px; border-radius: 14px; 
+            background: white; border-radius: 14px; 
+            overflow: hidden;
             box-shadow: 0 5px 20px rgba(183, 110, 121, 0.08);
             border-top: 4px solid var(--primary); transition: 0.3s;
+            display: flex; flex-direction: column;
         }
         .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(183, 110, 121, 0.15); }
         
-        .service-card h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 10px; color: var(--dark); }
-        .service-card p { color: #666; font-size: 0.92rem; margin-bottom: 20px; line-height: 1.6; }
-        
-        .card-link { 
-            color: var(--primary-dark); font-weight: 600; text-decoration: none; 
-            display: inline-flex; align-items: center; gap: 6px; font-size: 0.9rem;
-            transition: 0.2s;
+        .service-img {
+            width: 100%;
+            height: 210px;
+            overflow: hidden;
         }
-        .card-link:hover { color: var(--gold); gap: 10px; }
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.4s ease;
+        }
+        .service-card:hover .service-img img {
+            transform: scale(1.05);
+        }
 
+        .service-body {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .service-card h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 12px; color: var(--dark); }
+        .service-card p { color: #555; font-size: 0.93rem; line-height: 1.6; }
+        
         .info-section {
             background: white;
             border: 1px solid #f3d4dc;
@@ -120,12 +137,6 @@
         }
         .info-section h3 { font-family: 'Playfair Display', serif; color: var(--primary-dark); font-size: 1.3rem; margin-bottom: 8px; }
         .info-section p { color: #555; font-size: 1rem; }
-
-        .profile-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
 
         footer { background: var(--dark); color: white; text-align: center; padding: 35px 20px; margin-top: 50px; border-top: 3px solid var(--gold); }
         footer p { font-size: 0.9rem; color: #ccc; }
@@ -157,47 +168,77 @@
 
         <div class="services-grid">
             
+            <!-- Cabelos -->
             <div class="service-card">
-                <h3>✂️ Cabelos</h3>
-                <p>Cortes modernos, estruturados e visagismo personalizado para realçar o melhor do seu estilo e personalidade.</p>
-                <a href="https://wa.me/5511959781467?text=Olá!%20Gostaria%20de%20agendar%20um%20horário%20para%20Cabelos." class="card-link" target="_blank">Agendar este serviço &rarr;</a>
+                <div class="service-img">
+                    <img src="cachos.jpg" alt="Cabelos e Cachos">
+                </div>
+                <div class="service-body">
+                    <h3>✂️ Cabelos</h3>
+                    <p>Cortes modernos, estruturados e visagismo personalizado. Realçamos o melhor do seu estilo com técnicas avançadas para garantir movimento, leveza e muita personalidade aos seus fios.</p>
+                </div>
             </div>
 
+            <!-- Escovas -->
             <div class="service-card">
-                <h3>💆‍♀️ Escovas</h3>
-                <p>Escovas simples, modeladas e finalizações impecáveis com alto brilho e durabilidade para qualquer ocasião.</p>
-                <a href="https://wa.me/5511959781467?text=Olá!%20Gostaria%20de%20agendar%20um%20horário%20para%20Escovas." class="card-link" target="_blank">Agendar este serviço &rarr;</a>
+                <div class="service-img">
+                    <img src="escova.jpg" alt="Escovas e Modelagem">
+                </div>
+                <div class="service-body">
+                    <h3>💆‍♀️ Escovas</h3>
+                    <p>Escovas simples, modeladas e finalizações impecáveis. Proporcionamos alto brilho, alinhamento perfeito e durabilidade prolongada para deixar seu cabelo pronto e radiante em qualquer ocasião.</p>
+                </div>
             </div>
 
+            <!-- Tratamentos -->
             <div class="service-card">
-                <h3>✨ Tratamentos</h3>
-                <p>Cronograma capilar completo com hidratação profunda, nutrição e reconstrução para fios saudáveis e sedosos.</p>
-                <a href="https://wa.me/5511959781467?text=Olá!%20Gostaria%20de%20agendar%20um%20horário%20para%20Tratamentos." class="card-link" target="_blank">Agendar este serviço &rarr;</a>
+                <div class="service-img">
+                    <img src="lavando-cabelo.jpg" alt="Tratamentos Capilares">
+                </div>
+                <div class="service-body">
+                    <h3>✨ Tratamentos</h3>
+                    <p>Cronograma capilar completo com hidratação profunda, nutrição e reconstrução. Cuidados intensivos desenvolvidos para devolver a vida, a maciez e a saúde estrutural aos fios danificados.</p>
+                </div>
             </div>
 
+            <!-- Colorimetria -->
             <div class="service-card">
-                <h3>🎨 Colorimetria</h3>
-                <p>Técnicas avançadas de mechas, luzes, tintura e balayage com segurança, proteção dos fios e cores deslumbrantes.</p>
-                <a href="https://wa.me/5511959781467?text=Olá!%20Gostaria%20de%20agendar%20um%20horário%20para%20Colorimetria." class="card-link" target="_blank">Agendar este serviço &rarr;</a>
+                <div class="service-img">
+                    <img src="babyliss.jpg" alt="Colorimetria e Babyliss">
+                </div>
+                <div class="service-body">
+                    <h3>🎨 Colorimetria</h3>
+                    <p>Técnicas avançadas de mechas, luzes, tintura e balayage. Trabalhamos com total segurança para garantir cores deslumbrantes e protegidas, preservando toda a integridade da fibra capilar.</p>
+                </div>
             </div>
 
+            <!-- Manicure & Pedicure -->
             <div class="service-card">
-                <h3>💅 Manicure & Pedicure</h3>
-                <p>Cuidados essenciais para unhas perfeitas, cutilagem impecável, esterilização rigorosa e esmaltação duradoura.</p>
-                <a href="https://wa.me/5511959781467?text=Olá!%20Gostaria%20de%20agendar%20um%20horário%20para%20Manicure%20e%20Pedicure." class="card-link" target="_blank">Agendar este serviço &rarr;</a>
+                <div class="service-img">
+                    <img src="manicure.jpg" alt="Manicure e Pedicure">
+                </div>
+                <div class="service-body">
+                    <h3>💅 Manicure & Pedicure</h3>
+                    <p>Cuidados essenciais para unhas perfeitas e saudáveis. Oferecemos cutilagem impecável, esterilização rigorosa em autoclave e esmaltação duradoura com uma ampla variedade de cores.</p>
+                </div>
             </div>
 
+            <!-- Spa para Pés -->
             <div class="service-card">
-                <h3>🌿 Spa para Pés</h3>
-                <p>Momento relaxante de esfoliação profunda e hidratação revigorante para renovar e cuidar com carinho dos seus pés.</p>
-                <a href="https://wa.me/5511959781467?text=Olá!%20Gostaria%20de%20agendar%20um%20horário%20para%20Spa%20para%20Pés." class="card-link" target="_blank">Agendar este serviço &rarr;</a>
+                <div class="service-img">
+                    <img src="spa-pes.jpg" alt="Spa para Pés">
+                </div>
+                <div class="service-body">
+                    <h3>🌿 Spa para Pés</h3>
+                    <p>Momento relaxante de cuidado e revigoramento. Inclui esfoliação profunda e hidratação intensiva para renovar, amaciar e proporcionar um alívio completo e agradável aos seus pés.</p>
+                </div>
             </div>
 
         </div>
 
         <div class="info-section">
             <h3>Atendimento Exclusivo com Hora Marcada</h3>
-            <p>Entre em contato pelo WhatsApp <strong>(11) 95978-1467</strong> para verificar os horários disponíveis e garantir o seu atendimento.</p>
+            <p>Entre em contato pelo WhatsApp <strong>(11) 95978-1467</strong> para verificar os horários disponíveis e garantir o seu atendimento personalizado.</p>
         </div>
     </div>
 
